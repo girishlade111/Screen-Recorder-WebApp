@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* Theme variables */
+:root {
+    --bg-color: #fff;
+    --text-color: #000;
+    --button-bg: #007bff;
+    --button-text: #fff;
+    --container-bg: #f9f9f9;
+}
+
+body.dark-mode {
+    --bg-color: #333;
+    --text-color: #fff;
+    --button-bg: #0056b3;
+    --container-bg: #444;
+}
+
+/* Base styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #2c3e50, #4a5568);
+}
+
+.recorder-container {
+    background-color: var(--container-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+body.dark-mode .recorder-container {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#record-button, #screenshot-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#record-button:hover, #screenshot-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+label {
+    margin: 10px 0;
+}
+
+#theme-switcher {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.preview {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#preview-video {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body.dark-mode #preview-video {
+    border: 1px solid #555;
+}
+
+#download-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#download-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#status {
+    color: red;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Screenshot button overlay */
+#screenshot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}

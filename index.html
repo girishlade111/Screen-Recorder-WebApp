@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Recorder WebApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="recorder-container">
+        <h1>Screen Recorder</h1>
+        <div class="controls">
+            <button id="record-button"><i class="fas fa-circle"></i> Start Recording</button>
+            <label>
+                <input type="checkbox" id="audio-checkbox"> Include Audio
+            </label>
+            <button id="theme-switcher">Switch to Dark Mode</button>
+        </div>
+        <div class="preview hidden">
+            <video id="preview-video" controls></video>
+            <a id="download-link" download="recording.webm">Download Recording</a>
+        </div>
+        <div id="status" class="hidden">Recording...</div>
+    </div>
+    <button id="screenshot-button" class="hidden"><i class="fas fa-camera"></i> Take Screenshot</button>
+    <script src="script.js"></script>
+</body>
+</html>
